@@ -12,12 +12,13 @@ function Todo() {
     const submitForm = (e) => {
         e.preventDefault()
         dispatch(addTodo(input))
+        document.getElementById('todoTxt').value = ''
     }
 
     return (
         <div>
             <form onSubmit={(e) => submitForm(e)}>
-                <input type="text" onChange={(e) => setInput(e.target.value)} />
+                <input type="text" id="todoTxt" onChange={(e) => setInput(e.target.value)} />
                 <button type="submit">Submit</button>
             </form>
             <ul>
